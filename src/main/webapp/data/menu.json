@@ -1,0 +1,54 @@
+[{
+    "name": "首页",
+    "icon": "&#xe68e;",
+    "url": "/manage/user/list.do",
+    "hidden": false,
+    "list": []
+}, {
+    "name": "用户管理",
+    "icon": "&#xe612;",
+    "url": "",
+    "hidden": false,
+    "list": [{
+        "name": "用户列表",
+        "url": "/manage/user/userlist.do"
+    }, {
+        "name": "添加用户",
+        "url": "/manage/user/adduser.do"
+    }]
+}, {
+    "name": "商品管理",
+    "icon": "&#xe609;",
+    "url": "",
+    "hidden": false,
+    "list": [{
+        "name": "品类管理",
+        "url": "/manage/product/getcategorylist.do"
+    }, {
+        "name": "商品管理",
+        "url": "/manage/product/prolist.do"
+    }]
+}, {
+    "name": "订单管理",
+    "icon": "&#xe621;",
+    "url": "",
+    "hidden": false,
+    "list": [{
+        "name": "订单管理",
+        "url": ""
+    }]
+},{
+    "name": "系统设置",
+    "icon": "&#xe620;",
+    "url": "",
+    "hidden": false,
+    "list": [{
+        "name": "修改密码",
+        "url": ""
+    }]
+}, {
+    "name": "退出登录",
+    "icon": "&#xe65c;",
+    "url": "/manage/web/webcache.do",
+    "list": []
+}]

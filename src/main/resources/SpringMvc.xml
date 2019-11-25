@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util-4.0.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+        http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+">
+<!--    配置拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**/*"/>
+            <mvc:exclude-mapping path="/manage/user/islogin.do"/>
+            <mvc:exclude-mapping path="/manage/static/**"/>
+            <mvc:exclude-mapping path="/manage/data/**"/>
+            <mvc:exclude-mapping path="/manage/img/**"/>
+            <bean class="com.neuedu.common.ServletInteceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    <!--    开启注解驱动-->
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>application/json;charset=utf-8</value>
+                    </list>
+                </property>
+<!--                <property name="DateFormat">-->
+<!--                    <value>yyyy-MM-dd HH:mm:ss</value>-->
+<!--                </property>-->
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+    <!-- 把标记了@Controller注解的类转换为bean -->
+    <context:component-scan base-package="com.neuedu.web"/>
+
+    <!-- 对模型视图名称的解析，即在模型视图名称添加前后缀 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/"
+          p:suffix=".jsp" p:viewClass="org.springframework.web.servlet.view.JstlView"/>
+
+    <bean name="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="10485760"/>
+        <property name="defaultEncoding" value="utf-8"/>
+    </bean>
+    <mvc:resources mapping="/manage/static/**" location="/static/"/>
+    <mvc:resources mapping="/manage/data/**" location="/data/"/>
+</beans>
