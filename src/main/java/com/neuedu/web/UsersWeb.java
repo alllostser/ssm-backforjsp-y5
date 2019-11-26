@@ -139,7 +139,28 @@ public class UsersWeb {
 //        String str = JSONObject.toJSONString(countUsers);
         return countUsers;
     }
-    @RequestMapping("exit.do")
+
+    /**
+     * 修改密码
+     * @param session
+     * @param password
+     * @return
+     */
+    @RequestMapping("/do_update_psd.do")
+    public String updatePsd(HttpSession session,String password){
+       Users user = (Users) session.getAttribute("user");
+        int i = service.updatePassworById(user.getId(), password);
+        session.setAttribute("user",null);
+        return "redirect:islogin.do";
+
+    }
+
+    /**
+     * 退出
+     * @param request
+     * @return
+     */
+    @RequestMapping("/exit.do")
     public String Exit(HttpServletRequest request){
         HttpSession session = request.getSession();
         session.setAttribute("user",null);

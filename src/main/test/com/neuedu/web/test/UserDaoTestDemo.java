@@ -74,6 +74,8 @@ public class UserDaoTestDemo {
     }
     @Test
     public void test4(){
+        String str ="q1";
+        System.out.println("/manage/user/do_update_psd.do?password="+str);
         System.out.println(anInt());
     }
 

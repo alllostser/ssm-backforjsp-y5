@@ -3,34 +3,40 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.neuedu.dao.UsersDao">
-    <resultMap id="BaseResultMap" type="com.neuedu.pojo.Users" >
-        <id column="id" property="id" jdbcType="INTEGER" />
-        <result column="username" property="username" jdbcType="VARCHAR" />
-        <result column="password" property="password" jdbcType="VARCHAR" />
-        <result column="nickname" property="nickname" jdbcType="VARCHAR" />
-        <result column="phone" property="phone" jdbcType="VARCHAR" />
-        <result column="email" property="email" jdbcType="VARCHAR" />
-        <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
-        <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+    <resultMap id="BaseResultMap" type="com.neuedu.pojo.Users">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="nickname" property="nickname" jdbcType="VARCHAR"/>
+        <result column="phone" property="phone" jdbcType="VARCHAR"/>
+        <result column="email" property="email" jdbcType="VARCHAR"/>
+        <result column="create_date" property="createDate" jdbcType="TIMESTAMP"/>
+        <result column="update_date" property="updateDate" jdbcType="TIMESTAMP"/>
         <result column="login_number" property="loginNumber" javaType="INTEGER"/>
     </resultMap>
-    <sql id="Base_Column_List" >
+    <sql id="Base_Column_List">
     id, username, password,nickname, phone, email,type, status,date_format(create_date,'%Y-%m-%d %H:%m') as create_date, date_format(update_date,'%Y-%m-%d %H:%m') as update_date,login_number
     </sql>
     <select id="getUsers" resultMap="BaseResultMap">
-        select <include refid="Base_Column_List"/> from neuedu_users
+        select
+        <include refid="Base_Column_List"/>
+        from neuedu_users
         order by id desc limit 6;
     </select>
-    <select id="getUserList" resultMap="BaseResultMap" >
-        select <include refid="Base_Column_List"/> from neuedu_users
+    <select id="getUserList" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from neuedu_users
         <where>
             <if test="id != null">
                 id=#{id}
             </if>
         </where>
     </select>
-    <select id="getUserByUsernameAndPassword" resultMap="BaseResultMap" >
-        select <include refid="Base_Column_List"/> from neuedu_users
+    <select id="getUserByUsernameAndPassword" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from neuedu_users
         where username=#{username}
         and password=#{password}
     </select>
@@ -46,7 +52,9 @@
         where username=#{username}
     </update>
     <select id="Search" resultMap="BaseResultMap">
-        select <include refid="Base_Column_List"/> from neuedu_users
+        select
+        <include refid="Base_Column_List"/>
+        from neuedu_users
         <where>
             <if test="param!=null or ''!=param">
                 phone like CONCAT(CONCAT('%',#{param}),'%')
@@ -64,5 +72,8 @@
         select day(create_date) as days,count(username) as countuser,month(create_date) as months,date_format(create_date,"%m月%d日") as createDate
         from neuedu_users
         group by days having months=month(now()) or months=month(now())-1 order by months
-</select>
+    </select>
+    <update id="updatePasswordById" >
+        update neuedu_users set password = #{password} where id=#{id}
+    </update>
 </mapper>

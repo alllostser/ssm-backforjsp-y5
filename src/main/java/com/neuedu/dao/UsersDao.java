@@ -14,4 +14,5 @@ public interface UsersDao {
     List<Users> Search(@Param("param") String param);
     int addUser(Users users);
     List<CountUsers> countUsers();
+    int updatePasswordById(@Param("id") Integer id,@Param("password") String password);
 }

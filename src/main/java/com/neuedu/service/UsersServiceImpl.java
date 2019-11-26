@@ -140,6 +140,13 @@ public class UsersServiceImpl implements UsersService {
         return countUsers;
     }
 
-
-
+    /**
+     * 修改密码
+     * @param id
+     * @return
+     */
+    @Override
+    public int updatePassworById(Integer id,String password) {
+        return dao.updatePasswordById(id,password);
+    }
 }

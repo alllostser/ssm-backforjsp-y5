@@ -44,7 +44,7 @@
     "hidden": false,
     "list": [{
         "name": "修改密码",
-        "url": ""
+        "url": "/manage/web/update_pasd.do"
     }]
 }, {
     "name": "退出登录",

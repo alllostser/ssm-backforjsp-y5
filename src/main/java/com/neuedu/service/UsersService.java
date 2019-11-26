@@ -16,4 +16,5 @@ public interface UsersService {
     ResponseCode Search(String param,String pageNum);
     int addUser(Users users);
     List<CountUsers> countUsers();
+    int updatePassworById(Integer id,String password);
 }

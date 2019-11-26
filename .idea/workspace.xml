@@ -6,7 +6,20 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21b78552-ded2-4b42-80d4-e83010b6fcc7" name="Default Changelist" comment="" />
+    <list default="true" id="21b78552-ded2-4b42-80d4-e83010b6fcc7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/update_psd.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SSM_Manager.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neuedu/dao/UsersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neuedu/dao/UsersDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neuedu/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neuedu/service/UsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neuedu/service/UsersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neuedu/service/UsersServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neuedu/web/UsersWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neuedu/web/UsersWeb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neuedu/web/WebController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neuedu/web/WebController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/neuedu/dao/UsersDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/neuedu/dao/UsersDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/com/neuedu/web/test/UserDaoTestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/com/neuedu/web/test/UserDaoTestDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/data/menu.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/data/menu.json" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +54,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/ssm-backforjsp-y5" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -62,7 +75,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/target/SSM_Manager/static/img" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -73,7 +86,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -408,10 +421,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserDaoTestDemo.test4" />
         <item itemvalue="JUnit.UserDaoTestDemo.test2" />
         <item itemvalue="Application.CodeUtils" />
         <item itemvalue="JUnit.UserDaoTestDemo.test1" />
-        <item itemvalue="JUnit.UserDaoTestDemo.test4" />
         <item itemvalue="JUnit.UserDaoTestDemo.test3" />
       </list>
     </recent_temporary>
@@ -456,6 +469,8 @@
       <workItem from="1574380934397" duration="29079000" />
       <workItem from="1574477365434" duration="19000" />
       <workItem from="1574647871394" duration="779000" />
+      <workItem from="1574651523461" duration="742000" />
+      <workItem from="1574765955976" duration="5917000" />
     </task>
     <servers />
   </component>
@@ -467,10 +482,17 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/ssm-backforjsp-y5" />
+    </ignored-roots>
   </component>
 </project>
